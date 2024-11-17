@@ -14,6 +14,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = BASE_DIR / 'website-master' 
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'calc',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.staticfiles.StaticFilesMiddleware',
 ]
 
 ROOT_URLCONF = 'new.urls'
@@ -56,8 +58,7 @@ ROOT_URLCONF = 'new.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR, 'calc', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,8 +116,8 @@ USE_I18N = True
 USE_TZ = True
 
 # Media files (user-uploaded content like images, documents)
-#MEDIA_URL = '/img/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
+# MEDIA_URL = '/img/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
 
 
 
